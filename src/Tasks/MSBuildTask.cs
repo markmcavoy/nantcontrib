@@ -41,7 +41,7 @@ namespace NAnt.Contrib.Tasks {
     ///   </para>
     /// </remarks>
     [TaskName("msbuild")]
-    [ProgramLocation(LocationType.FrameworkDir)]
+    //[ProgramLocation(LocationType.FrameworkDir)]
     public class MsbuildTask : ExternalProgramBase {
         #region Private Instance Fields
 
@@ -51,6 +51,7 @@ namespace NAnt.Contrib.Tasks {
         private string _target;
         private bool _noautoresponse;
         private VerbosityLevel _verbosity = VerbosityLevel.NotSet;
+
 
         #endregion Private Instance Fields
 
@@ -136,7 +137,12 @@ namespace NAnt.Contrib.Tasks {
         /// Starts the external process and captures its output.
         /// </summary>
         protected override void ExecuteTask() {
-            // create temp response file to hold compiler options
+
+            //base.BaseDirectory = new DirectoryInfo(@"C:\Program Files (x86)\MSBuild\14.0\Bin");
+
+            base.ExeName = @"C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe";
+
+                // create temp response file to hold compiler options
             _responseFileName = Path.GetTempFileName();
 
             try {

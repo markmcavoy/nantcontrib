@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
@@ -8,7 +8,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <AssemblyKeyContainerName />
-    <AssemblyName>NAntContrib</AssemblyName>
+    <AssemblyName>NAnt.Contrib.Tasks</AssemblyName>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
@@ -37,7 +37,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\build\Debug</OutputPath>
+    <OutputPath>..\..\..\..\Program Files %28x86%29\nantcontrib-0.92\bin\</OutputPath>
     <BaseAddress>285212672</BaseAddress>
     <ConfigurationOverrideFile />
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -93,12 +93,19 @@
       <Name>mscorlib</Name>
     </Reference>
     <Reference Include="NAnt.Core">
-      <Name>NAnt.Core</Name>
-      <HintPath>..\NAntRelease\bin\NAnt.Core.dll</HintPath>
+      <HintPath>..\lib\NAnt.Core.dll</HintPath>
     </Reference>
     <Reference Include="NAnt.DotNetTasks">
-      <Name>NAnt.DotNetTasks</Name>
-      <HintPath>..\NAntRelease\bin\NAnt.DotNetTasks.dll</HintPath>
+      <HintPath>..\lib\NAnt.DotNetTasks.dll</HintPath>
+    </Reference>
+    <Reference Include="NAnt.SourceControlTasks">
+      <HintPath>..\lib\NAnt.SourceControlTasks.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core">
+      <HintPath>..\lib\nunit.core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="SourceSafe.Interop">
       <Name>SourceSafe.Interop</Name>
@@ -302,39 +309,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Tasks\MSBuildTask.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\InstallerCreationCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\InstallerDatabase.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\InstallerRecordReader.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\InstallerSearchClause.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\InstallerTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\InstallerTaskBase.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\MsiCreationCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\MsiTask.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\MsmCreationCommand.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\MsmTask.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Tasks\Msi\TypeLibRecord.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Tasks\NGenTask.cs">
@@ -682,7 +656,6 @@
     <Compile Include="Util\SqlStatementList.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Content Include="Tasks\Msi\MsiTask.xsd" />
     <Content Include="Tasks\NAnt.xsd" />
     <Content Include="xsl\NUnitSummary.xsl" />
     <Content Include="xsl\toolkit.xsl" />
@@ -690,9 +663,6 @@
     <EmbeddedResource Include="Tasks\NUnit2Report\xsl\NUnit-Frame.xsl" />
     <EmbeddedResource Include="Tasks\NUnit2Report\xsl\NUnit-NoFrame.xsl" />
     <EmbeddedResource Include="Tasks\NUnit2Report\xsl\toolkit.xsl" />
-    <None Include="Tasks\Msi\MsiTask.xsx">
-      <DependentUpon>MsiTask.xsd</DependentUpon>
-    </None>
     <Compile Include="Functions\ArrayFunctions.cs" />
   </ItemGroup>
   <ItemGroup>

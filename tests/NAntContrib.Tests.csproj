@@ -78,12 +78,13 @@
       <Name>mscorlib</Name>
     </Reference>
     <Reference Include="NAnt.Core">
-      <Name>NAnt.Core</Name>
-      <HintPath>..\NAntRelease\bin\NAnt.Core.dll</HintPath>
+      <HintPath>..\lib\NAnt.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.core">
+      <HintPath>..\lib\nunit.core.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <Name>nunit.framework</Name>
-      <HintPath>..\NAntRelease\bin\nunit.framework.dll</HintPath>
+      <HintPath>..\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
